@@ -7,7 +7,7 @@ There are several variables that must be changed in the script to suit your need
 
 EMAIL_ADDRESS: This is the email address used for backup notifications.<br/>
 SRC_DRIVE_NAME: This is the name of the drive that will be backed up.<br/>
-DEST_IMAGE_FILE: This is the destination directory for the backup.<br/>
+DEST_IMAGE_FILE: This is the destination path where the backup image will be created.<br/>
 
 <h2>Language</h2>
 
