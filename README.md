@@ -19,20 +19,20 @@ The project consists of an Bash script that performs a full backup of a volume o
   - Create /opt/backup directory:</br>
     $ sudo mkdir /opt/backup
 
-  - Create /opt/backup/backup_family-server_full.sh and copy contents of backup_family-server_full.sh.txt</br>
-    into /opt/backup/backup_family-server_full.sh:</br>
-    $ sudo nano /opt/backup/backup_family-server_full.sh
+  - Create /opt/backup/backup_server_full.sh and copy contents of backup_server_full.sh.txt</br>
+    into /opt/backup/backup_server_full.sh:</br>
+    $ sudo nano /opt/backup/backup_server_full.sh
 
-  - Grant the execute permissions to /opt/backup/backup_family-server_full.sh:</br>
-    $ sudo chmod +x /opt/backup/backup_family-server_full.sh
+  - Grant the execute permissions to /opt/backup/backup_server_full.sh:</br>
+    $ sudo chmod +x /opt/backup/backup_server_full.sh
     
   - Setup Cron Jobs to run the backup scripts at selected times:</br>
     $ sudo crontab -e
 
   - Add the following lines to crontab:</br>
   
-    <span>#</span> Run backup_family-server_full.sh every Sunday at 12:00pm.</br>
-    0 12 * * 0 /opt/backup/backup_family-server_full.sh > /dev/null 2>&1</br>
+    <span>#</span> Run backup_server_full.sh every Sunday at 12:00pm.</br>
+    0 12 * * 0 /opt/backup/backup_server_full.sh > /dev/null 2>&1</br>
 </br>
 </br>
 <!--
