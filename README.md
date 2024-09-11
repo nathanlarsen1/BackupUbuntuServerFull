@@ -29,6 +29,7 @@ The project consists of an Bash script that performs a full backup of a volume o
     $ sudo crontab -e
 
   5. Add the following lines to crontab:</br>
+  
       <span>#</span> Run backup_server_full.sh every Sunday at 12:00pm.</br>
     0 12 * * 0 /opt/backup/backup_server_full.sh > /dev/null 2>&1</br>
 </br>
