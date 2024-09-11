@@ -46,14 +46,6 @@ DEST_IMAGE_FILE: This is the destination path where the backup image will be cre
       <span>#</span> Run backup_server_full.sh every Sunday at 12:00pm.</br>
     0 12 * * 0 /opt/backup/backup_server_full.sh > /dev/null 2>&1</br>
 
- <b>Install and setup sSMTP</b></br>
-
-  1. Setup Cron Jobs to run the backup scripts at selected times:</br>
-     $ sudo crontab -e
-
-  2. Add the following lines to crontab:</br>
-   <span>#</span> Run backup_server_data.sh every day at 3:00am.</br>
-   0 3 * * * /opt/backup/backup_server_data.sh > /dev/null 2>&1</br>
 
   <b>Install and setup sSMTP</b></br>
 
