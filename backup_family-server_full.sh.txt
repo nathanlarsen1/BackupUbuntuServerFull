@@ -6,7 +6,7 @@
 # Revision: 01172017.2130
 
 # Email account to use for email transaction
-EMAIL_ADDRESS=2bunreal@gmail.com
+EMAIL_ADDRESS=<email@address.com>
 
 # Get file path of script including filename
 SCRIPTPATH=$(readlink -f "$0")
