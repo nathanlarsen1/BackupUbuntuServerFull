@@ -2,16 +2,17 @@
 
 
 <h2>Description</h2>
-The project consists of an Bash script that performs a full backup of a volume on Ubuntu Linux to a backup drive.</br>
+The project consists of an Bash script that creates an image file of a drive using the dd command on Ubuntu Linux.</br>
 There are several variables that must be changed in the script to suit your needs. The variables that need to be changed are the following:<br/><br/>
 
 EMAIL_ADDRESS: This is the email address used for backup notifications.<br/>
 SRC_DRIVE_NAME: This is the name of the drive that will be backed up.<br/>
 DEST_IMAGE_FILE: This is the destination path where the backup image will be created.<br/>
 
-<h2>Language</h2>
+<h2>Language and Applications</h2>
 
 - <b>Bash</b>
+- <b>dd</b>
 
 <h2>Environments Used </h2>
 
