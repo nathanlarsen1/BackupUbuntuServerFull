@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# This script creates an image based backup of a disk and then sends an email with the contents of the backup log file.
+# Written by Nathan Larsen
+
+# Revision: 01172017.2130
+
+# Email account to use for email transaction
+EMAIL_ADDRESS=2bunreal@gmail.com
+
+# Get file path of script including filename
+SCRIPTPATH=$(readlink -f "$0")
+
+# Remove filename from file path of script
+SCRIPTDIR=$(dirname "${SCRIPTPATH}")
+
+# Source server name
+SERVER_NAME=$(hostname)
+
+# Source drive name
+SRC_DRIVE_NAME=sdb
+
+# Destination image path and name
+DEST_IMAGE_FILE="/mnt/ext_backup/${SERVER_NAME}_full_backup/${SERVER_NAME}.img"
+
+# Delete old backup log
+LOG_FILE_EXISTS=$(ls "${SCRIPTDIR}/${SERVER_NAME}-backup-full-"*.log 2> /dev/null | wc -l)
+if [ $LOG_FILE_EXISTS != 0 ]
+then
+sudo rm "${SCRIPTDIR}/${SERVER_NAME}-backup-full-"*.log
+fi
+
+# Today's date
+TODAY=$(date +%m%d%Y)
+
+# Backup log path and name
+BACKUP_LOG="${SCRIPTDIR}/${SERVER_NAME}-backup-full-${TODAY}.log"
+
+# Create blank log file
+sudo touch "${BACKUP_LOG}"
+
+# Delete old backup image
+if [ -f "${DEST_IMAGE_FILE}" ];
+then
+rm "${DEST_IMAGE_FILE}"
+fi
+
+# Create image file
+sudo dd if="/dev/${SRC_DRIVE_NAME}" of="${DEST_IMAGE_FILE}" 2>> "${BACKUP_LOG}"
+
+# Read contents of backup log
+BACKUP_LOG_CONTENTS=$(cat "${BACKUP_LOG}")
+
+# Send backup log in email
+(
+echo "To: ${EMAIL_ADDRESS}"; \
+echo "From: ${EMAIL_ADDRESS}"; \
+echo "Subject: Full Backup of ${SERVER_NAME} Completed Successfully"; \
+echo ""; \
+echo "${BACKUP_LOG_CONTENTS}"; \
+) | /usr/sbin/ssmtp ${EMAIL_ADDRESS}
