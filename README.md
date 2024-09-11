@@ -12,14 +12,8 @@ The project consists of an Bash script that performs a full backup of a volume o
 
 - <b>Ubuntu 22.04.4 LTS</b>
 
-<h2>Program notifications</h2>
+<h2>Setup</h2>
 
-<p align="center">
-Dell Service Tag and Express Service Code: <br/>
-<img src="https://i.imgur.com/xsfMD1q.png" height="80%" width="80%" alt="Dell Service Tag and Express Service Code"/>
-<br />
-<br />
-</p>
 
 <!--
  ```diff
