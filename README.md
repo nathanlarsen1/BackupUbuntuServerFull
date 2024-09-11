@@ -13,6 +13,7 @@ DEST_IMAGE_FILE: This is the destination path where the backup image will be cre
 
 - <b>Bash</b>
 - <b>dd</b>
+- <b>SSMTP</b>
 
 <h2>Environments Used </h2>
 
