@@ -2,7 +2,7 @@
 
 
 <h2>Description</h2>
-The project consists of an Bash script that creates an image file of a drive using the dd command on Ubuntu Linux.</br></br>
+This project consists of an Bash script that creates an image file of a drive using the dd command on Ubuntu Linux.</br></br>
 
 <h2>Language and Applications</h2>
 
